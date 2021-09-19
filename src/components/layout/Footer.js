@@ -5,7 +5,7 @@ export default function Footer() {
         <div>
             <footer className="bg-light text-center">
                 <div className="text-center" style={{ backgroundColor: '#77002e', color: '#fff', padding: '15px', textAlign: 'center' }}>
-                    © 2021 Copyright: React Meetup 2021
+                    © 2021 Copyright: React Training 2021
                 </div>
             </footer>
         </div>

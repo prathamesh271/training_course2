@@ -1,7 +1,8 @@
 import React from 'react';
 import { Table, Tag, Space } from 'antd';
-import { Button } from 'reactstrap';
 import Card from '../../components/ui/Card';
+import { Breadcrumb } from 'antd';
+import { BookOutlined } from '@ant-design/icons';
 import 'antd/dist/antd.css';
 
 export default function AssignmentOne() {
@@ -10,7 +11,7 @@ export default function AssignmentOne() {
             title: 'Name',
             dataIndex: 'name',
             key: 'name',
-            render: text => <a>{text}</a>,
+            render: text => <a href="/">{text}</a>,
         },
         {
             title: 'Age',
@@ -47,8 +48,8 @@ export default function AssignmentOne() {
             key: 'action',
             render: (text, record) => (
                 <Space size="middle">
-                    <a>Invite {record.name}</a>
-                    <a>Delete</a>
+                    <a href="/">Invite {record.name}</a>
+                    <a href="/">Delete</a>
                 </Space>
             ),
         },
@@ -80,6 +81,15 @@ export default function AssignmentOne() {
 
     return (
         <div className="container">
+            <div style={{ marginTop: 20, marginBottom: 20, marginLeft: 5 }}> 
+                <Breadcrumb>
+                    {/* <Breadcrumb.Item href="/">
+                        <HomeOutlined /> Home
+                    </Breadcrumb.Item> */}
+                    <Breadcrumb.Item><BookOutlined /> Assignment One</Breadcrumb.Item>
+                </Breadcrumb>
+            </div>
+            
             <div className="" style={{ marginTop: 10, marginBottom: 10 }}>
                 <Card>
                     <Table columns={columns} dataSource={data} />

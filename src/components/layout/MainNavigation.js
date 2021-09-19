@@ -30,7 +30,7 @@ const menu = (
         <div className="main-navigation">
             <div className="container">
                 <header className="header">
-                    <h2 className="logo">Training React</h2>
+                    <h1 className="logo" style={{ marginBottom: 0 }}>Training React</h1>
                     <nav className="nav">
                         <ul className="nav-ul">
                             {/* <li className="nav-item">
@@ -48,7 +48,7 @@ const menu = (
                             <li className="nav-item">
                                 <Link to="/assignment-two" className="nav-link">
                                     <Dropdown overlay={menu} trigger={['click']}>
-                                        <Link to="/assignment-two" onClick={e => e.preventDefault()} className="nav-link">
+                                        <Link to="/assignment-two" onClick={e => e.preventDefault()} className="nav-link"  style={{ marginBottom: 0 }}>
                                             All Assignment <CaretDownOutlined />
                                         </Link>
                                     </Dropdown>
