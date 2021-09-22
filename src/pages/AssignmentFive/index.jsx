@@ -8,8 +8,8 @@ import { HomeOutlined, BookOutlined } from '@ant-design/icons';
 import 'antd/dist/antd.css';
 
 export default function AssignmentFive() {
-    const count = useSelector((state) => state.counter.value)
-    const dispatch = useDispatch()
+    const count = useSelector((state) => state.counter.value);
+    const dispatch = useDispatch();
 
     console.log('Count is', count);
 

@@ -12,11 +12,13 @@ const { TabPane } = Tabs;
 export default function AssignmentFour() {
     const [leagues, setLeagues] = useState([]);
     const [sports, setSoprts] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
 
     const getLeaguesData = async () => {
         const response = await fetch('https://www.thesportsdb.com/api/v1/json/1/all_leagues.php');
         const resData = await response.json();
         console.log('response leagues', resData);
+        setIsLoading(false);
         setLeagues(resData.leagues);
     }
 
@@ -24,18 +26,29 @@ export default function AssignmentFour() {
         const response = await fetch('https://www.thesportsdb.com/api/v1/json/1/all_sports.php');
         const resData = await response.json();
         console.log('response sports', resData);
+        setIsLoading(false);
         setSoprts(resData.sports);
     }
 
     // console.log('leagues', leagues);
 
     useEffect(() => {
+        setIsLoading(true);
         getLeaguesData(); 
     }, []);
 
     useEffect(() => {
+        setIsLoading(true);
         getSportsData(); 
     }, []);
+
+    if (isLoading) {
+        return(
+            <section>
+                <p className="" style={{ textAlign: "center", marginTop: '20%', marginBottom: '20%' }}>Loading...</p>
+            </section>
+        );
+    }
 
     return (
         <div className="container" style={{ marginTop: 10 }}>
